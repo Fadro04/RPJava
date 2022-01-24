@@ -5,7 +5,12 @@ public class Mannschaft {
     private String trainer;
     private String torwart;
     private ArrayList<Spieler> spielerListe;
+
     public Mannschaft(String name, String trainer, String torwart, ArrayList spielerListe) {
+        this.name = name;
+        this.spielerListe = spielerListe;
+        this.torwart = torwart;
+        this.trainer = trainer;
     }
 
     public void setName(String name) {
@@ -38,5 +43,23 @@ public class Mannschaft {
 
     public ArrayList<Spieler> getSpielerListe() {
         return spielerListe;
+    }
+
+    public int getMotivation() {
+        int motivation = 0;
+        for (Spieler i : spielerListe) {
+            motivation = motivation + i.getMotivation();
+        }
+        motivation = motivation / spielerListe.size();
+        return motivation;
+    }
+
+    public int getStaerke() {
+        int staerke = 0;
+        for (Spieler i : spielerListe) {
+            staerke = staerke + i.getStaerke();
+        }
+        staerke = staerke / spielerListe.size();
+        return staerke;
     }
 }
