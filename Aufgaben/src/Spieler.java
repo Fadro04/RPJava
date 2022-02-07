@@ -7,10 +7,10 @@ public class Spieler extends Person {
     //Konstruktor
     public Spieler(String name, int alter, int staerke, int torschuss, int motivation, int anzahlDerTore) {
         super(name, alter);
-        this.staerke=staerke;
-        this.torschuss=torschuss;
-        this.motivation=motivation;
-        this.anzahlDerTore=anzahlDerTore;
+        this.staerke = staerke;
+        this.torschuss = torschuss;
+        this.motivation = motivation;
+        this.anzahlDerTore = anzahlDerTore;
     }
 
     //Setter und Getter Methoden
