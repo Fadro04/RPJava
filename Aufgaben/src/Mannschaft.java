@@ -62,4 +62,14 @@ public class Mannschaft {
         staerke = staerke / spielerListe.size();
         return staerke;
     }
+
+    @Override
+    public String toString() {
+        return "Mannschaft{" +
+                "name='" + name + '\'' +
+                ", trainer='" + trainer + '\'' +
+                ", torwart='" + torwart + '\'' +
+                ", spielerListe=" + spielerListe +
+                '}';
+    }
 }

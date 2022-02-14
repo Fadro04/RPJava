@@ -3,6 +3,8 @@ public class Ergebnis {
     private int gegnertore;
 
     public Ergebnis(int heimtore, int gegnertore) {
+        this.gegnertore = gegnertore;
+        this.heimtore = heimtore;
     }
 
     public int getGegnertore() {

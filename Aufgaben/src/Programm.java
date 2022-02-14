@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.IOException;
 import java.io.SerializablePermission;
 import java.util.ArrayList;
@@ -6,7 +7,7 @@ public class Programm {
     public static void main(String[] args) throws IOException {
         ArrayList<String> spielerListeG=new ArrayList<String>();
         ArrayList<String> spielerListeH=new ArrayList<String>();
-        StringBuilder spielverlauf =null;
+
 
         //Neue Instanzen
         Trainer test = new Trainer("Peter", 37, 5);
@@ -16,9 +17,10 @@ public class Programm {
         Mannschaft test4 = new Mannschaft("Werder", "Peter", "Manfred", spielerListeG);
         Mannschaft test5 = new Mannschaft("Schalke", "Hans", "Jürgen", spielerListeH);
         Ergebnis test6 = new Ergebnis(5,4);
-        Spiel test7 = new Spiel(test4, test5, test6, spielverlauf);
+        Spiel test7 = new Spiel(test4, test5, test6);
 
-        //Getter und setter Methoden test
+
+        //Test Mannschaft
         spielerListeG.add("Kroos");
         spielerListeG.add("Müller");
         spielerListeG.add("Hummels");
@@ -48,6 +50,15 @@ public class Programm {
             System.out.println(spielerListeH.get(i));
         }
 
+        //Test Ergebnis
+        System.out.println(test6);
 
+        test6.gegentore1();
+        test6.heimtore1();
+
+        System.out.println(test6);
+
+        //Test Spiel
+        System.out.println(test7);
     }
 }
