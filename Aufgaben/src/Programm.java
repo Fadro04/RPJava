@@ -5,60 +5,40 @@ import java.util.ArrayList;
 
 public class Programm {
     public static void main(String[] args) throws IOException {
-        ArrayList<String> spielerListeG=new ArrayList<String>();
-        ArrayList<String> spielerListeH=new ArrayList<String>();
+        ArrayList<Spieler> spielerListeG=new ArrayList<>();
+        ArrayList<Spieler> spielerListeH=new ArrayList<>();
 
 
         //Neue Instanzen
-        Trainer test = new Trainer("Peter", 37, 5);
-        Spieler test2 =new Spieler("Wilhelm", 30, 6, 10, 5, 9);
+        Trainer hTrainer = new Trainer("Peter", 37, 5);
+        Trainer gTrainer = new Trainer("Peter", 37, 5);
         Torwart G =new Torwart("Neuer", 30, 3, 7, 2);
         Torwart H = new Torwart("h", 45, 3, 2, 2);
-        Mannschaft test4 = new Mannschaft("Werder", "Peter", "Manfred", spielerListeG);
-        Mannschaft test5 = new Mannschaft("Schalke", "Hans", "Jürgen", spielerListeH);
+        Mannschaft test4 = new Mannschaft("Werder", hTrainer, G, spielerListeG);
+        Mannschaft test5 = new Mannschaft("Schalke", gTrainer, H, spielerListeH);
         Ergebnis test6 = new Ergebnis(5,4);
         Spiel test7 = new Spiel(test4, test5, test6);
 
+        for (int i = 0;i < 11;i++) {
+            // Zufallszahlen
+            int staerke = new java.util.Random().nextInt(12)-1;
+            int torschuss = new java.util.Random().nextInt(12) -1;
+            int motivation = new java.util.Random().nextInt(12) - 1;
+            int anzahlDerTore = new java.util.Random().nextInt(40);
+            int alter = new java.util.Random().nextInt(21) +20;
 
-        //Test Mannschaft
-        spielerListeG.add("Kroos");
-        spielerListeG.add("Müller");
-        spielerListeG.add("Hummels");
-        spielerListeG.add("Boateng");
-        spielerListeG.add("Kimich");
-        spielerListeG.add("Götze");
-        spielerListeG.add("Schweinsteiger");
-        spielerListeG.add("Öziel");
-        spielerListeG.add("Podolski");
-        spielerListeG.add("Kloose");
+            Spieler g = new Spieler("SpielerGast" + i, alter, staerke, torschuss, motivation, anzahlDerTore);
+            spielerListeG.add(g);
 
-        spielerListeH.add("Ronaldo");
-        spielerListeH.add("Schürrle");
-        spielerListeH.add("Reuß");
-        spielerListeH.add("Khidira");
-        spielerListeH.add("Krama");
-        spielerListeH.add("Draxler");
-        spielerListeH.add("Ginter");
-        spielerListeH.add("Lahm");
-        spielerListeH.add("Zieler");
-        spielerListeH.add("Weidenfeller");
+            int staerke2 = new java.util.Random().nextInt(12)-1;
+            int torschuss2 = new java.util.Random().nextInt(12) -1;
+            int motivation2 = new java.util.Random().nextInt(12) - 1;
+            int anzahlDerTore2 = new java.util.Random().nextInt(40);
+            int alter2 = new java.util.Random().nextInt(21) +20;
 
-        for (int i=0; i<spielerListeG.size();i++) {
-            System.out.println(spielerListeG.get(i));
-        }
-        for (int i=0; i<spielerListeH.size();i++) {
-            System.out.println(spielerListeH.get(i));
+            Spieler h = new Spieler("SpielerHeim" + i, alter, staerke, torschuss, motivation, anzahlDerTore);
+            spielerListeH.add(h);
         }
 
-        //Test Ergebnis
-        System.out.println(test6);
-
-        test6.gegentore1();
-        test6.heimtore1();
-
-        System.out.println(test6);
-
-        //Test Spiel
-        System.out.println(test7);
     }
 }

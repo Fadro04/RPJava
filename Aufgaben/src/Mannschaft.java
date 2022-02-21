@@ -2,39 +2,39 @@ import java.util.ArrayList;
 
 public class Mannschaft {
     private String name;
-    private String trainer;
-    private String torwart;
+    private Trainer trainer;
+    private Torwart torwart;
     private ArrayList<Spieler> spielerListe;
 
-    public Mannschaft(String name, String trainer, String torwart, ArrayList spielerListe) {
+    public Mannschaft(String name, Trainer trainer, Torwart torwart, ArrayList spielerListe) {
         this.name = name;
         this.spielerListe = spielerListe;
         this.torwart = torwart;
         this.trainer = trainer;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setTrainer(String trainer) {
-        this.trainer = trainer;
-    }
-
-    public String getTrainer() {
+    public Trainer getTrainer() {
         return trainer;
     }
 
-    public void setTorwart(String torwart) {
-        this.torwart = torwart;
+    public Torwart getTorwart() {
+        return torwart;
     }
 
-    public String getTorwart() {
-        return torwart;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
+    }
+
+    public void setTorwart(Torwart torwart) {
+        this.torwart = torwart;
     }
 
     public void setSpielerListe(ArrayList<Spieler> spielerListe) {

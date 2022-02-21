@@ -30,8 +30,35 @@ public class Gameplay {
         int erste = new java.util.Random().nextInt(11);
 
         while (erste <= spielzeit1) {
+            int heim =
+            ermittelMannschaftsWert(spiel.getHeimmannschaft(), spiel.getHeimmannschaft().getTrainer());
+            int gegner =
+            ermittelMannschaftsWert(spiel.getGegenermannschaft(), spiel.getGegenermannschaft().getTrainer());
+            int summe = heim + gegner;
+            int zufalsZahl = new java.util.Random().nextInt(summe);
 
+
+            if (zufalsZahl > heim) {
+                 Spieler zufalssSpieler = spiel.getHeimmannschaft().getSpielerListe().get(new java.util.Random().nextInt(10));
+                 boolean treffer = erzieltTor(zufalssSpieler, spiel.getHeimmannschaft().getTorwart());
+                 if (treffer = true) {
+                     spiel.getErgebnis().heimtore1();
+                     String torschuetze = zufalssSpieler.getName();
+                     spiel.getSpielverlauf().append(torschuetze + " schießt ein Tor");
+                 } else spiel.getSpielverlauf().append(spiel.getGegenermannschaft().getTorwart().getName() + " hält den Ball");
+
+            } else {
+                Spieler zufalssSpieler = spiel.getGegenermannschaft().getSpielerListe().get(new java.util.Random().nextInt(10));
+                boolean treffer = erzieltTor(zufalssSpieler, spiel.getGegenermannschaft().getTorwart());
+                if (treffer = true) {
+                    spiel.getErgebnis().gegentore1();
+                    String torschuetze = zufalssSpieler.getName();
+                    spiel.getSpielverlauf().append(torschuetze + " schießt ein Tor");
+                } else spiel.getSpielverlauf().append(spiel.getHeimmannschaft().getTorwart().getName() + " hält den Ball");
+
+            }
             erste = erste + new java.util.Random().nextInt(11);
         }
+        spiel.getSpielverlauf().append(spiel.getErgebnis());
     }
 }
