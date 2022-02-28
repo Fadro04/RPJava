@@ -5,6 +5,7 @@ public class Mannschaft {
     private Trainer trainer;
     private Torwart torwart;
     private ArrayList<Spieler> spielerListe;
+    private int[] aufstellung = new int[2];
 
     public Mannschaft(String name, Trainer trainer, Torwart torwart, ArrayList spielerListe) {
         this.name = name;
@@ -71,5 +72,9 @@ public class Mannschaft {
                 ", torwart='" + torwart + '\'' +
                 ", spielerListe=" + spielerListe +
                 '}';
+    }
+
+    public void aufstellen() {
+
     }
 }
