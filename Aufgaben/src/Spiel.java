@@ -4,10 +4,11 @@ public class Spiel {
     private Ergebnis ergebnis;
     private StringBuilder spielverlauf;
 
-    public Spiel(Mannschaft heimmannschaft, Mannschaft gegenermannschaft, Ergebnis ergebnis) {
-        this.ergebnis=ergebnis;
-        this.gegenermannschaft=gegenermannschaft;
-        this.heimmannschaft=heimmannschaft;
+    public Spiel(Mannschaft heimmannschaft, Mannschaft gegenermannschaft) {
+        this.ergebnis = new Ergebnis();
+        this.gegenermannschaft = gegenermannschaft;
+        this.heimmannschaft = heimmannschaft;
+        this.spielverlauf = new StringBuilder();
     }
 
     public Ergebnis getErgebnis() {
@@ -35,5 +36,12 @@ public class Spiel {
                 ", ergebnis=" + ergebnis +
                 ", spielverlauf=" + spielverlauf +
                 '}';
+    }
+
+    private static boolean brecheSpielAb() {
+        int zufalsZahl = new java.util.Random().nextInt(1000);
+        if (zufalsZahl == 0) {
+            return true;
+        } else return false;
     }
 }

@@ -24,8 +24,16 @@ public class Gameplay {
             return true;
         } else return false;
     }
+    private static boolean brecheSpielAb() {
+        int zufalsZahl = new java.util.Random().nextInt(10000);
+        if (zufalsZahl == 0) {
+            return true;
+        } else return false;
+    }
 
-    public static void spielen(Spiel spiel) {
+
+
+    public static void spielen(Spiel spiel) throws SpielAbbruchException {
         int spielzeit1 = spielzeit + new java.util.Random().nextInt(maxNachspielzeit);
         int erste = new java.util.Random().nextInt(11);
 
@@ -37,24 +45,27 @@ public class Gameplay {
             int summe = heim + gegner;
             int zufalsZahl = new java.util.Random().nextInt(summe);
 
+            if (brecheSpielAb()) {
+                throw new SpielAbbruchException(spielzeit1);
+            }
 
             if (zufalsZahl > heim) {
                  Spieler zufalssSpieler = spiel.getHeimmannschaft().getSpielerListe().get(new java.util.Random().nextInt(10));
                  boolean treffer = erzieltTor(zufalssSpieler, spiel.getHeimmannschaft().getTorwart());
-                 if (treffer = true) {
+                 if (treffer) {
                      spiel.getErgebnis().heimtore1();
                      String torschuetze = zufalssSpieler.getName();
-                     spiel.getSpielverlauf().append(torschuetze + " schießt ein Tor");
-                 } else spiel.getSpielverlauf().append(spiel.getGegenermannschaft().getTorwart().getName() + " hält den Ball");
+                     spiel.getSpielverlauf().append(torschuetze).append(" schießt ein Tor");
+                 } else spiel.getSpielverlauf().append(spiel.getGegenermannschaft().getTorwart().getName()).append(" hält den Ball");
 
             } else {
                 Spieler zufalssSpieler = spiel.getGegenermannschaft().getSpielerListe().get(new java.util.Random().nextInt(10));
                 boolean treffer = erzieltTor(zufalssSpieler, spiel.getGegenermannschaft().getTorwart());
-                if (treffer = true) {
+                if (treffer) {
                     spiel.getErgebnis().gegentore1();
                     String torschuetze = zufalssSpieler.getName();
-                    spiel.getSpielverlauf().append(torschuetze + " schießt ein Tor");
-                } else spiel.getSpielverlauf().append(spiel.getHeimmannschaft().getTorwart().getName() + " hält den Ball");
+                    spiel.getSpielverlauf().append(torschuetze).append(" schießt ein Tor");
+                } else spiel.getSpielverlauf().append(spiel.getHeimmannschaft().getTorwart().getName()).append(" hält den Ball");
 
             }
             erste = erste + new java.util.Random().nextInt(11);

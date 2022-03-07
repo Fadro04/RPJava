@@ -2,9 +2,9 @@ public class Ergebnis {
     private int heimtore;
     private int gegnertore;
 
-    public Ergebnis(int heimtore, int gegnertore) {
-        this.gegnertore = gegnertore;
-        this.heimtore = heimtore;
+    public Ergebnis() {
+        this.gegnertore = 0;
+        this.heimtore = 0;
     }
 
     public int getGegnertore() {
@@ -15,14 +15,12 @@ public class Ergebnis {
         return heimtore;
     }
 
-    public int heimtore1() {
+    public void heimtore1() {
         heimtore++;
-        return heimtore;
     }
 
-    public int gegentore1() {
+    public void gegentore1() {
         gegnertore++;
-        return gegnertore;
     }
 
     @Override
