@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 
 public class Gameplay {
@@ -9,18 +10,13 @@ public class Gameplay {
         return mannschaft.getMotivation() * mannschaft.getStaerke() * trainer.getErfahrung();
     }
 
-    public static Frame aufstellung(int[] ar, Graphics g) {
-        Frame wnd = new Frame("Einfaches Fenster");
+    public static JFrame aufstellung(int[] ar, Graphics g) {
+        JFrame wnd = new JFrame("Einfaches Fenster");
         wnd.setSize(1000, 800);
-        wnd.setVisible(true);
-        int maxX = wnd.getSize().width - wnd.getInsets().left - wnd.getInsets().right;
-        int maxY = wnd.getSize().height - wnd.getInsets().top - wnd.getInsets().bottom;
 
-        g.drawString(
-                "Die Client-Area ist " + maxX + "*" + maxY + " Pixel groß",
-                wnd.getInsets().left + maxX / 2,
-                wnd.getInsets().top + maxY / 2
-        );
+        g.setColor(Color.BLACK);
+        g.drawRect(200, -200, 100, 100);
+        wnd.setVisible(true);
         return wnd;
     }
 
