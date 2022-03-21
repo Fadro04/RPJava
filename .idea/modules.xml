@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Aufgaben/Aufgaben.iml" filepath="$PROJECT_DIR$/Aufgaben/Aufgaben.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bankkonto/Bankkonto.iml" filepath="$PROJECT_DIR$/Bankkonto/Bankkonto.iml" />
       <module fileurl="file://$PROJECT_DIR$/Obst/Obst.iml" filepath="$PROJECT_DIR$/Obst/Obst.iml" />
       <module fileurl="file://$PROJECT_DIR$/RP java.iml" filepath="$PROJECT_DIR$/RP java.iml" />
       <module fileurl="file://$PROJECT_DIR$/SchleifenWiderholung/SchleifenWiderholung.iml" filepath="$PROJECT_DIR$/SchleifenWiderholung/SchleifenWiderholung.iml" />

@@ -47,6 +47,5 @@ public class Programm {
         Gameplay.spielen(test7);
         System.out.println(test7.getErgebnis());
         System.out.println(test7.getSpielverlauf());
-
     }
 }
