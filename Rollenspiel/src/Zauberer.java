@@ -2,7 +2,7 @@ public class Zauberer extends Spielfigur {
     private int zauberpunkte;
 
     public Zauberer( int staerke, int zauberpunkte) {
-        super("Zauberer", 750, 1500, staerke);
+        super("Zauberer", 750, 1500, staerke, "zauberer");
         this.zauberpunkte = zauberpunkte;
     }
 

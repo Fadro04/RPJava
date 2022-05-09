@@ -1,6 +1,6 @@
 public class Elfe extends Spielfigur{
     public Elfe(int staerke) {
-        super("Elf", 20, 2000, staerke);
+        super("Elf", 20, 2000, staerke, "elf");
     }
 
     public void rennen() throws KeineKraftException {

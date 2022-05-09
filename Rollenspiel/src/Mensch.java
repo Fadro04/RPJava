@@ -1,7 +1,12 @@
 public class Mensch extends Spielfigur{
-    public Mensch(String name, int staerkepunkte, int hp, int staerke) {
-        super(name, staerkepunkte, hp, staerke);
+    private int willensStaerke;
+
+    public Mensch(int staerkepunkte, int hp, int staerke) {
+        super("Mensch", 20, 2000, staerke, "mensch");
+        this.willensStaerke = willensStaerke;
     }
+
+
 
     @Override
     public String toString() {
