@@ -28,11 +28,14 @@ public class Raum  {
     }
 
     public Moebelstueck getMoebel(String inventarNr) throws MoebelNichtGefundenException {
-        Moebelstueck inventar = moebelListe.get(0);
-        for (int i = 0;i < moebelListe.size();i++) {
-            if (moebelListe.get(i).getInventarNr() == inventarNr) {
-                inventar = moebelListe.get(i);
-            } else inventar = null;
+        Moebelstueck inventar = null;
+        for (Moebelstueck moebelstueck : moebelListe) {
+            if (moebelstueck.getInventarNr() == inventarNr) {
+                inventar = moebelstueck;
+                break;
+            } else {
+                inventar = null;
+            }
 
         }
         if (inventar == null) {
@@ -46,6 +49,7 @@ public class Raum  {
         for (int i = 0;i < moebelListe.size();i++) {
             if (moebelListe.get(i) == moebelstueck) {
                 moebelListe.remove(moebelstueck);
+                break;
             }
         }
         if (size == moebelListe.size()){

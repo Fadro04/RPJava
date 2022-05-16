@@ -33,7 +33,6 @@ public class test {
         raum1.addMoebel(stuhl2);
         raum1.addMoebel(tisch1);
 
-
         //5.
         Kontakt kontakt1 = new Kontakt("Mann.Herrmann@kabelmail.de", "0421/4598448", "0187/34884385");
         Techniker techniker1 = new Techniker("Mann", "Herrman", kontakt1);
